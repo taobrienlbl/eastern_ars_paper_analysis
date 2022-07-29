@@ -3,3 +3,4 @@ era5_links/*
 *.out
 Untitled*.ipynb
 *.ipynb_checkpoints*
+figures_and_analyses/composites/*

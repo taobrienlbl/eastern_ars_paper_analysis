@@ -1,4 +1,4 @@
-data_root = /N/slate/obrienta/midwest_ar_composites/era5_links
+data_root = /N/slate/obrienta/midwest_ar_composites/figures_and_analyses/era5_links
 regex = \.ll025sc.*\.nc$
 #regex = \.ll025sc\.202111.*\.nc$
 
