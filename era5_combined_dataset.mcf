@@ -18,6 +18,10 @@ variables = Z
 regex = %data_root%/.*128_129_z%regex%
 
 [cf_reader]
+variables = Q
+regex = %data_root%/.*128_133_q%regex%
+
+[cf_reader]
 variables = VAR_2T
 regex = %data_root%/.*128_167_2t%regex%
 z_axis_variable = ""
