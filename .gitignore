@@ -2,4 +2,4 @@
 era5_links/*
 *.out
 Untitled*.ipynb
-.ipynb_checkpoints*
+*.ipynb_checkpoints*
