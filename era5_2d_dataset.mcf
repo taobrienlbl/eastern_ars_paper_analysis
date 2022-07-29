@@ -1,0 +1,42 @@
+data_root = /N/slate/obrienta/midwest_ar_composites/era5_links
+regex = \.ll025sc.*\.nc$
+
+z_axis_variable = plev
+
+[cf_reader]
+variables = VAR_2T
+regex = %data_root%/.*128_167_2t%regex%
+x_axis_variable = longitude
+y_axis_variable = latitude
+z_axis_variable = ""
+provides_time
+provides_geometry
+
+[cf_reader]
+variables = SP
+regex = %data_root%/.*128_134_sp%regex%
+x_axis_variable = longitude
+y_axis_variable = latitude
+z_axis_variable = ""
+
+[cf_reader]
+variables = TCW
+regex = %data_root%/.*128_136_tcw%regex%
+x_axis_variable = longitude
+y_axis_variable = latitude
+z_axis_variable = ""
+
+[cf_reader]
+variables = VIWVE
+regex = %data_root%/.*162_071_viwve%regex%
+x_axis_variable = longitude
+y_axis_variable = latitude
+z_axis_variable = ""
+
+[cf_reader]
+variables = VIWVN
+regex = %data_root%/.*162_072_viwvn%regex%
+x_axis_variable = longitude
+y_axis_variable = latitude
+z_axis_variable = ""
+
