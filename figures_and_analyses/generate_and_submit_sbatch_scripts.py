@@ -9,7 +9,7 @@ parser.add_argument("-N", "--nodes", type=int, help="Number of nodes", default=4
 parser.add_argument("-s","--season",type=str, help="Season",choices=["DJF","MAM","JJA","SON","annual","all"], default = "all")
 parser.add_argument("-p","--procs-per-gpu",type=int, help="Number of processors per GPU", default = 8)
 parser.add_argument("-a","--algorithm",type=str, help="TECA Algorithm to use", choices=["teca_bard_v1.0.1"], default = "teca_bard_v1.0.1")
-parser.add_argument("-t","--time",type=int, help="Time (minutes) of SLURM request", default = 120)
+parser.add_argument("-t","--time",type=int, help="Time (minutes) of SLURM request", default = 240)
 parser.add_argument("-d","--output-dir",type=str, help="Output directory",default = "./composites")
 parser.add_argument("-o","--output-template",type=str, help="Output template; must contain the {season} and {algorithm} templates",default = "era5_bloomington_AR_composites_{season}_{algorithm}.sbatch")
 

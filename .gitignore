@@ -4,3 +4,5 @@ era5_links/*
 Untitled*.ipynb
 *.ipynb_checkpoints*
 figures_and_analyses/composites/*
+*.png
+*.pdf
