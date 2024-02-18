@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH -J ar_comp_{season}
+#SBATCH --nodes {num_nodes}
+#SBATCH --gpus {num_gpus}
+#SBATCH --constraint gpu
+#SBATCH --account m1517_g
+#SBATCH --time {time}
+#SBATCH -q regular
+
+BASE_DIR="/global/cfs/cdirs/m1517/cascade/taobrien/midwest_ar_composites/figures_and_analyses/"
+
+IN_FILE="$BASE_DIR/era5_index_files/{location}_ars_{season}_era5_{algorithm}.txt"
+
+module use /global/common/software/m1517/teca/perlmutter_gpu/develop/modulefiles/
+module load cpe-cuda # required for teca module to load
+module swap gcc gcc/11.2.0 # fixes library not found issues with teca
+module load teca
+
+time srun -n {num_srun_procs} -G {num_gpus} teca_temporal_reduction \
+    --input_file="$BASE_DIR/era5_combined_dataset_large.mcf" \
+    --x_axis_variable longitude \
+    --y_axis_variable latitude \
+    --point_arrays T Z Q U V PV W VAR_2T SP TCW CAPE VIWVE VIWVN \
+    --interval all \
+    --time_index_file $IN_FILE \
+    --output_file era5_{location}_ar_composite_{season}_{algorithm}.nc \
+    --spatial_partitioning \
+    --verbose 2

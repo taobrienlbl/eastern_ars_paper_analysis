@@ -1,5 +1,5 @@
 data_root = /N/slate/obrienta/midwest_ar_composites/figures_and_analyses/era5_links
-regex = \.ll025sc.*\.nc$
+regex = \.ll025.*\.nc$
 #regex = \.ll025sc\.202111.*\.nc$
 
 x_axis_variable = longitude
@@ -20,6 +20,14 @@ regex = %data_root%/.*128_129_z%regex%
 [cf_reader]
 variables = Q
 regex = %data_root%/.*128_133_q%regex%
+
+[cf_reader]
+variables = U
+regex = %data_root%/.*128_131_u%regex%
+
+[cf_reader]
+variables = V
+regex = %data_root%/.*128_132_v%regex%
 
 [cf_reader]
 variables = VAR_2T

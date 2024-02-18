@@ -6,15 +6,15 @@
 #SBATCH -t {time}
 #SBATCH -p gpu
 
-IN_FILE="../era5_index_files/bloomington_ars_{season}_era5_{algorithm}.txt"
+IN_FILE="../../era5_index_files/bloomington_ars_{season}_era5_{algorithm}.txt"
 
 module load teca
 
 srun -n {num_srun_procs} teca_temporal_reduction \
-    --input_file="../era5_combined_dataset.mcf" \
+    --input_file="../../era5_combined_dataset.mcf" \
     --x_axis_variable longitude \
     --y_axis_variable latitude \
-    --point_arrays T Z Q VAR_2T SP TCW VIWVE VIWVN \
+    --point_arrays T Z Q U V VAR_2T SP TP TCW VIWVE VIWVN \
     --interval all \
     --time_index_file $IN_FILE \
     --output_file era5_bloomington_ar_composite_{season}_{algorithm}.nc \
